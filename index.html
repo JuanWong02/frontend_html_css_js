@@ -1,11 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dosis&family=Overpass+Mono&family=Poppins:wght@100;200;300;400&family=Roboto+Condensed:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Masterdots game</title>
 </head>
+
 <body>
-    
+    <!-- HEADER  -->
+    <header>
+        <img src="./img/logo_150.png" alt="Logo JC Productions">
+    </header>
+    <!-- USER FORM  -->
+    <main>
+        <form action="#">
+            <div class="itemform">
+                <label for="name">Enter your nick: </label>
+                <input type="text" name="nick" value="@" id="nicka" readonly/>
+                <input type="text" name="nick" id="nick" required>
+            </div>
+            <div class="itemform">
+                <label for="name">Email: </label>
+                <input type="email" name="email" id="email" value="correo@correo.com" required>
+            </div>
+            <div class="itemform">
+                <label for="size">Game size: </label>
+                <select name="size" id="size">
+                    <option value="">--Please select a size--</option>
+                    <option value="1">4x4</option>
+                    <option value="2">5x5</option>
+                    <option value="3">6x6</option>
+                </select>
+            </div>
+            <div class="itemform">
+                <input type="submit" value="PLAY">
+            </div>
+        </form>
+    </main>
+
+    <!-- FOOTER  -->
+    <footer>
+        <p>FrontEnd HTML, CSS y JS</p>
+    </footer>
+
 </body>
+
 </html>
