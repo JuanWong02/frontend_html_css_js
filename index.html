@@ -17,31 +17,39 @@
 <body>
     <!-- HEADER  -->
     <header>
-        <img src="./img/logo_150.png" alt="Logo JC Productions">
+        <img src="./img/logo_150.png" alt="JC Productions Logo">
     </header>
     <!-- USER FORM  -->
     <main>
-        <form action="#">
+        <div>
+            <p id="error"></p>
+        </div>
+
+
+        <form action="game.html" id="inForm">
             <div class="itemform">
-                <label for="name">Enter your nick: </label>
-                <input type="text" name="nick" value="@" id="nicka" readonly/>
-                <input type="text" name="nick" id="nick" required>
+                <label for="name">Enter your nick* </label>
+                <input type="text" name="nick" value="@" id="nicka" disabled/>
+                <input type="text" name="nick" id="nick" required minlength="2">
             </div>
             <div class="itemform">
-                <label for="name">Email: </label>
-                <input type="email" name="email" id="email" value="correo@correo.com" required>
+                <label for="name">Email </label>
+                <input type="email" name="email" id="email" value="email@email.com" required>
             </div>
             <div class="itemform">
-                <label for="size">Game size: </label>
-                <select name="size" id="size">
-                    <option value="">--Please select a size--</option>
+                <label for="size">Game size* </label>
+                <select name="size" id="size" required>
+                    <option value="0">--Please select a size--</option>
                     <option value="1">4x4</option>
                     <option value="2">5x5</option>
                     <option value="3">6x6</option>
                 </select>
             </div>
             <div class="itemform">
-                <input type="submit" value="PLAY">
+                <p>* Mandatory</p>
+            </div>
+            <div class="itemform">
+                <input type="submit" value="PLAY" id="play">
             </div>
         </form>
     </main>
@@ -50,6 +58,8 @@
     <footer>
         <p>FrontEnd HTML, CSS y JS</p>
     </footer>
+    <!-- CODIGO JS  -->
+    <script src="./js/app.js"></script>
 
 </body>
 
