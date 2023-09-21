@@ -1,10 +1,21 @@
 
 
 // Initialization of variables, objects, DOM 
-const nickInput = document.getElementById("nick");
-const sizeInput = document.getElementById("size");
-const inForm = document.getElementById("inForm");
-const error = document.getElementById("error");
+let nickInput;
+let sizeInput; 
+let emailInput;
+let i   
+let error;
+let avatarItems;
+let itemImg;
+let avatarContainer;
+
+
+// Check if there is an error on game.html 
+if (sessionStorage.getItem('error')) {
+    error.innerText = sessionStorage.getItem('error');
+    sessionStorage.removeItem('error');
+}
 
 // Event Functions 
 checkForm = (event) => {
@@ -23,8 +34,52 @@ checkForm = (event) => {
         error.innerText="You must select a panel size";
         return false;
     }
+    // Correct info 
+    userData(nickInput,sizeInput,emailInput);
+    userHistory(nickInput);
     return true;
 }
 
+const movingImg = (event) => {
+   itemImg = event.target;
+}
+
+const changeImg = (event) => {
+    avatarContainer.src = itemImg.src;
+
+}
+
+//  Load objects from DOM, checks and form events 
+const domLoaded = () => {
+    // Capture all the elements
+     nickInput = document.getElementById("nick");
+     sizeInput = document.getElementById("size");
+     emailInput = document.getElementById("email");
+     inForm = document.getElementById("inForm");
+     error = document.getElementById("error");
+
+
+// Check if there is an error on game.html
+    if(sessionStorage.getItem('error')!=null)
+    {
+        error.innerText = sessionStorage.getItem('error');
+        sessionStorage.removeItem('error');
+    }
+
+        inForm.addEventListener('submit', checkForm);
+
+        avatarItems = document.getElementsByClassName("avatarImgItem");
+        // D&D Events 
+        for(let item of avatarItems) {
+            item.addEventListener('dragstart', movingImg);
+        }
+        avatarContainer = document.getElementById("avatarImg");
+        avatarContainer.addEventListener('dragover', e=>e.preventDefault());
+        avatarContainer.addEventListener('drop', changeImg);
+}       
+
 // Start Event Load 
-inForm.addEventListener('submit', checkForm);
+document.addEventListener('DOMContentLoaded', domLoaded);
+
+// Geolocation 
+geolocationData();
