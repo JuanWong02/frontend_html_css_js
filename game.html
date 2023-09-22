@@ -1,16 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/gameStyle.css">
+    <title>MasterDots GAME</title>
 </head>
 <body>
-    
-
-
-
-    <!-- JS CODE  -->
+    <main>
+        <div id="gameContainer">
+            <div id="game">
+                <!-- PINTAR EL PANEL DE JUEGO AUTOMA -->
+                <!-- <div class="containerItem"><div class="item"></div></div> -->
+            </div>
+            <div id="gameOver">
+                <button id="newGame">NEW GAME</button>
+            </div>
+            <div id="gameTitle">
+                <p>MASTERDOTS</p>
+            </div>
+        </div>
+        <div id="userContainer">
+            <form id="form_in" action="game.html">
+                <div class="itemform">
+                    <img src="./img/avatar1.png" width="26" id="avatarImg">
+                    <input type="text" id="nick" value="nick" disabled>
+                </div>
+                <div class="itemform">
+                    <label for="score">Score</label>
+                    <input type="text" id="score" value="0"  class="gameInput" disabled>
+                </div>
+                <div class="itemform">
+                    <label for="time">Time Left</label>
+                    <input type="text" id="time" value="10" class="gameInput" disabled>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        Frontend JS, HTML y CSS
+    </footer>
     <script src="./js/userData.js"></script>
     <script src="./js/game.js"></script>
 </body>

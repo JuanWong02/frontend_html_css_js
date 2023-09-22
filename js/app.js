@@ -35,7 +35,7 @@ checkForm = (event) => {
         return false;
     }
     // Correct info 
-    userData(nickInput,sizeInput,emailInput);
+    userData(nickInput,sizeInput,emailInput,avatarContainer);
     userHistory(nickInput);
     return true;
 }

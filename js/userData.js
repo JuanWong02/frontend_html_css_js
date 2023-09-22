@@ -3,13 +3,15 @@ let nick;
 let size;
 let email;
 let geolocationTxt;
+let avatarImg;
 
 
-userData = (nick,size,email) => {
+userData = (nick,size,email, avatarContainer) => {
     sessionStorage.setItem('nick', nick.value);
     sessionStorage.setItem('size', size.value);
     sessionStorage.setItem('email', email.value);
     sessionStorage.setItem('geolocationTxt', geolocationTxt);
+    sessionStorage.setItem('avatarImg', avatarContainer.src);
 }
 
 
@@ -17,6 +19,7 @@ getUserData = () => {
     nick = sessionStorage.getItem('nick');
     size = sessionStorage.getItem('size');
     email = sessionStorage.getItem('email');
+    avatarImg = sessionStorage.getItem('avatarImg');
 }
 
 // Check if user is null, then throw error 
